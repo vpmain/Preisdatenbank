@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EHPCalcDetail</class>
+ <widget class="QMainWindow" name="EHPCalcDetail">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1293</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1293</width>
+    <height>680</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+	font-family:segoe ui;
+	font-size:12px;
+}
+
+QMainWindow::separator {
+    background: yellow;
+    width: 10px; /* when vertical */
+    height: 10px; /* when horizontal */
+}
+
+QWidget#centralwidget{
+	background: #d0d6da;
+}
+
+QMenuBar{
+	font-size:12px;
+	background: #e7eaec;
+}
+
+QMenu{
+	font-size:12px;
+}
+
+QPushButton{
+	font-size:12px;
+	background:#b8c0c6;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+QPushButton:hover{
+	font-size:12px;
+	background:#d0d6da;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+QPushButton:pressed{
+	font-size:12px;
+	background:#a1abb1;
+	border-style: solid;
+	border-radius: 5px;
+    padding-top: 1px;
+    padding-left: 2px;
+}
+
+QProgressBar{
+	color: #000000;
+	background-color: #d0d6da;
+	border-style: none;
+	border-radius: 5px;
+	text-align: center;
+}
+QProgressBar::chunk{
+border-radius: 5px;
+	background-color: rgb(115, 127, 133);
+}
+
+QLineEdit{
+	font-size:12px;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+QDoubleSpinBox{
+	font-size:12px;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+QDoubleSpinBox::up-button{
+    width: 20px;
+	border-style: 0px solid;
+	border-radius: 1px;
+	background: #d0d6da;
+}
+
+QDoubleSpinBox::down-button{
+    width: 20px;
+	border-style: solid;
+	border-radius: 1px;
+	background: #d0d6da;
+}
+
+QDoubleSpinBox::up-arrow {
+    image: url('//firma.local/dfs/Laufwerk-Z/Daten - Intern/Kosten/09 SQL Preisdatenbank/07_Python Oberfläche/qss/up-arrow.png');
+    width: 7px;
+    height: 7px;
+}
+
+QDoubleSpinBox::down-arrow {
+    image: url('//firma.local/dfs/Laufwerk-Z/Daten - Intern/Kosten/09 SQL Preisdatenbank/07_Python Oberfläche/qss/down-arrow.png');
+    width: 7px;
+    height: 7px;
+}
+
+QLabel#lblTitle {
+	font-size:18px;
+}
+
+QLabel{
+	font-size:12px;
+}
+
+QDateEdit{
+	font-size:12px;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+QDateEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+	background: #d0d6da;
+
+    border-left-width: 1px;
+    border-left-color: #e7eaec;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 3px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 3px;
+}
+
+QDateEdit::down-arrow {
+    image: url('//firma.local/dfs/Laufwerk-Z/Daten - Intern/Kosten/09 SQL Preisdatenbank/07_Python Oberfläche/qss/down-arrow.png');
+    width: 10px;
+    height: 10px;
+}
+
+QDateEdit::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+
+QDateEdit QAbstractItemView:enabled {
+	color: #000000;
+	background: #e7eaec;
+	selection-color: #000000;
+	selection-background-color: #d0d6da;
+}
+
+QDateEdit QWidget#qt_calendar_navigationbar {
+	color: #000000;
+	background-color: #b8c0c6;
+}
+
+
+QTableView {
+	font-size:12px;
+    background: #ffffff;
+    border-style: none;
+	gridline-color: #737f86;
+}
+
+QTableView::item:selected {
+	color: #000000;
+	background: #d0d6da;
+}
+
+QHeaderView::section {
+    background-color: #b8c0c6;
+    padding: 2px;
+    font-size: 12px;
+	font-weight: bold;
+    border-style: none;
+    border-bottom: 1px solid #737f86;
+	border-right: 1px solid #737f86;	
+}
+
+QHeaderView::section:horizontal
+{
+    border-top: 1px solid #737f86;
+}
+
+QHeaderView::section:vertical
+{
+    border-left: 1px solid #737f86;
+	border-right: 1px solid #737f86;
+}
+
+
+QListView{
+	font-size:12px;
+	color: #000000;
+	border: 0px solid;
+	border-radius: 10px;
+}
+
+QListView::item 
+{
+    padding: 0px;
+}
+
+QListView::item:selected 
+{
+    border: 1px solid #d0d6da;
+    border-radius: 2px;
+    color: #000000;
+}
+
+QListView::item:selected:!active 
+{
+    background-color: #d0d6da;
+    border-radius: 2px;
+    color: #000000;
+
+}
+
+QListView::item:selected:active 
+{
+    background-color: #d0d6da;
+    border-radius: 2px;
+    color: #000000;
+
+}
+
+QListView::item:hover 
+{
+    background-color: #d0d6da;
+	margin: 0px;
+    border-radius: 2px;
+
+}
+
+
+/*STYLESHEET FÜR QFrame*/
+
+QFrame#fraSideMenu, QFrame#fraTable, QFrame#fraTitle, QFrame#fraFooter {
+    border-radius: 20px;
+    background: #e7eaec;
+}
+
+/*STYLESHEET FÜR QGridLayout*/
+
+QGridLayout {
+    border-radius: 0px;
+    background: transparent;
+}
+
+/*STYLESHEET FÜR QLabel*/
+
+QLabel {
+    border-radius: 0px;
+    background: #e7eaec;
+}
+
+/*STYLESHEET FÜR QComboBox*/
+
+QComboBox {
+	font-size:12px;
+    border: solid;
+    border-radius: 3px;
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;
+}
+
+QComboBox:editable {
+    background: #ffffff;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: #ffffff;
+}
+
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: #ffffff;
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px;
+    padding-left: 4px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+	background: #d0d6da;
+
+    border-left-width: 1px;
+    border-left-color: #e7eaec;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 3px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::drop-down:on {
+	background:#a1abb1;
+}
+
+QComboBox::down-arrow {
+    image: url('//firma.local/dfs/Laufwerk-Z/Daten - Intern/Kosten/09 SQL Preisdatenbank/07_Python Oberfläche/qss/down-arrow.png');
+    width: 10px;
+    height: 10px;
+}
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid #d0d6da;
+	border-radius: 0px;
+	background: #ffffff;
+	selection-color: #000000;
+    selection-background-color: #d0d6da;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="2" column="0" colspan="2">
+       <widget class="QFrame" name="fraFooter">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_10">
+         <item row="0" column="0">
+          <layout class="QGridLayout" name="gridLayout_9">
+           <item row="1" column="0">
+            <widget class="QLabel" name="lblLabel12">
+             <property name="maximumSize">
+              <size>
+               <width>95</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Version:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblLabel11">
+             <property name="maximumSize">
+              <size>
+               <width>95</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Programmname:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="lblProgrammname">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Version</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="lblVersion">
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Version</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QFrame" name="fraTitle">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_8">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item row="0" column="0">
+          <layout class="QGridLayout" name="gridLayout_7">
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>10</number>
+           </property>
+           <property name="rightMargin">
+            <number>10</number>
+           </property>
+           <property name="bottomMargin">
+            <number>10</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblTitle">
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Dateiname</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QFrame" name="fraTable">
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>300</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>5000</height>
+         </size>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item row="0" column="0">
+          <layout class="QGridLayout" name="gridLayout_4" columnstretch="0,0,0,0,0,0,0,0">
+           <property name="leftMargin">
+            <number>15</number>
+           </property>
+           <property name="topMargin">
+            <number>15</number>
+           </property>
+           <property name="rightMargin">
+            <number>15</number>
+           </property>
+           <property name="bottomMargin">
+            <number>15</number>
+           </property>
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <item row="5" column="6">
+            <widget class="QPushButton" name="cmdNewPos">
+             <property name="minimumSize">
+              <size>
+               <width>145</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>145</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Neue benutzerdef. Pos.</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblLabel1">
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Durch das setzen von &amp;quot;/&amp;quot; können mehrere Teilbegriffe gesucht werden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="toolTipDuration">
+              <number>0</number>
+             </property>
+             <property name="text">
+              <string>ID:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLineEdit" name="txtID">
+             <property name="minimumSize">
+              <size>
+               <width>5</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>205</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+             <property name="contextMenuPolicy">
+              <enum>Qt::NoContextMenu</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4" colspan="3">
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="cboLG">
+             <property name="minimumSize">
+              <size>
+               <width>111</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>240</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="editable">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLineEdit" name="txtPos">
+             <property name="minimumSize">
+              <size>
+               <width>300</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="7">
+            <widget class="QPushButton" name="cmdSave">
+             <property name="minimumSize">
+              <size>
+               <width>145</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>145</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Speichern</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="7">
+            <widget class="QLabel" name="lblLabel4_3">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Preisbasis:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QComboBox" name="cboEinheit">
+             <property name="minimumSize">
+              <size>
+               <width>111</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="editable">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="lblLabel4_2">
+             <property name="minimumSize">
+              <size>
+               <width>75</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Einheit:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="lblLabel1_3">
+             <property name="minimumSize">
+              <size>
+               <width>240</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>240</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Durch das setzen von &amp;quot;/&amp;quot; können mehrere Teilbegriffe gesucht werden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="toolTipDuration">
+              <number>0</number>
+             </property>
+             <property name="text">
+              <string>LG:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="lblLabel1_2">
+             <property name="minimumSize">
+              <size>
+               <width>300</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Durch das setzen von &amp;quot;/&amp;quot; können mehrere Teilbegriffe gesucht werden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="toolTipDuration">
+              <number>0</number>
+             </property>
+             <property name="text">
+              <string>Position:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="lblLabel1_5">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Durch das setzen von &amp;quot;/&amp;quot; können mehrere Teilbegriffe gesucht werden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="toolTipDuration">
+              <number>0</number>
+             </property>
+             <property name="text">
+              <string>Anmerkung:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="8">
+            <widget class="QTableWidget" name="grdEHPDetail">
+             <property name="minimumSize">
+              <size>
+               <width>400</width>
+               <height>300</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="lineWidth">
+              <number>0</number>
+             </property>
+             <property name="sizeAdjustPolicy">
+              <enum>QAbstractScrollArea::AdjustToContents</enum>
+             </property>
+             <property name="sortingEnabled">
+              <bool>true</bool>
+             </property>
+             <property name="rowCount">
+              <number>0</number>
+             </property>
+             <property name="columnCount">
+              <number>0</number>
+             </property>
+             <attribute name="horizontalHeaderCascadingSectionResizes">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="horizontalHeaderMinimumSectionSize">
+              <number>20</number>
+             </attribute>
+             <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderVisible">
+              <bool>false</bool>
+             </attribute>
+             <attribute name="verticalHeaderMinimumSectionSize">
+              <number>20</number>
+             </attribute>
+             <attribute name="verticalHeaderDefaultSectionSize">
+              <number>20</number>
+             </attribute>
+            </widget>
+           </item>
+           <item row="5" column="5">
+            <widget class="QPushButton" name="cmdDelete">
+             <property name="minimumSize">
+              <size>
+               <width>145</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>145</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Löschen</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="7">
+            <widget class="QDateEdit" name="datPBBis">
+             <property name="minimumSize">
+              <size>
+               <width>145</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>145</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="4">
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="3" column="7">
+            <widget class="QLineEdit" name="txtErgebnis">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1" colspan="7">
+            <widget class="QLineEdit" name="txtAnmerkungen">
+             <property name="minimumSize">
+              <size>
+               <width>1158</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>6000</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>segoe ui</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1293</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
