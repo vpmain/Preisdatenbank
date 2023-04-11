@@ -176,16 +176,19 @@ def createConnection2():
 
 
 def string_to_float(value: str, rounded: int):
+    # string in float konvertieren
     new_value = round(float(value.replace(".", "").replace(",", ".")), rounded)
     return new_value
 
 
 def float_to_string(value: str):
+    #float in string konvertieren
     new_value = format_decimal(value, format='#,##0.00', locale='de_DE')
     return new_value
 
 
 class MySqlModel(QSqlQueryModel):
+    # Model für die Haupttabelle
     def data(self, index, role=Qt.DisplayRole):  # =Qt.DisplayRole
         if role == Qt.TextAlignmentRole:
             # Perform per-type checks and render accordingly.
@@ -242,6 +245,7 @@ class MySqlModel2(QSqlQueryModel):
 
 
 class SQLModelIndexVerwaltung(QSqlQueryModel):
+    # Model für die Indextabelle
     def data(self, index, role=Qt.DisplayRole):  # =Qt.DisplayRole
         if role == Qt.TextAlignmentRole:
             # Perform per-type checks and render accordingly.
@@ -258,6 +262,7 @@ class SQLModelIndexVerwaltung(QSqlQueryModel):
 
 
 class SqlModelKennwerte(QSqlQueryModel):
+    # Model für die Kennwerttabelle
     def data(self, index, role=Qt.DisplayRole):  # =Qt.DisplayRole
         if role == Qt.TextAlignmentRole:
             # Perform per-type checks and render accordingly.
@@ -289,6 +294,7 @@ class SqlModelKennwerte(QSqlQueryModel):
 
 
 class SqlModelKennwerteDetails(QSqlQueryModel):
+    # Model für die Detailkennwerttabelle
     def data(self, index, role=Qt.DisplayRole):  # =Qt.DisplayRole
         if role == Qt.TextAlignmentRole:
             # Perform per-type checks and render accordingly.
@@ -320,6 +326,7 @@ class SqlModelKennwerteDetails(QSqlQueryModel):
 
 
 class SqlModelKennwerteDetailsLVPos(QSqlQueryModel):
+    # Model für die LVdetailtabelle
     def data(self, index, role=Qt.DisplayRole):  # =Qt.DisplayRole
         if role == Qt.TextAlignmentRole:
             # Perform per-type checks and render accordingly.
@@ -354,6 +361,7 @@ class SqlModelKennwerteDetailsLVPos(QSqlQueryModel):
 
 
 class CheckScreen(QWidget):
+    # Klasse für das Checkicon nach erfolgreicher Abfrage
     def __init__(self):
         super().__init__()
         self.setFixedSize(128, 128)
@@ -375,6 +383,7 @@ class CheckScreen(QWidget):
 
 
 class SplashScreen(QtWidgets.QMainWindow):
+    # Fenster beim Start des Programmes
     def __init__(self, parent=None):
         super().__init__(parent)
 
