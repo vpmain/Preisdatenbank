@@ -1448,8 +1448,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Abfrage Menge
         self.qry_menge = """
-            SELECT FORMAT(MIN(MengeFinal), 'N', 'de-de'), FORMAT(MAX(MengeFinal), 'N', 'de-de')
-            FROM KennwerteProjekteFinalView
+            SELECT FORMAT(MIN(Menge), 'N', 'de-de'), FORMAT(MAX(Menge), 'N', 'de-de')
+            FROM KennwerteProjekteFinalViewMitStatus
         """
         self.query.exec(self.qry_menge)
 
